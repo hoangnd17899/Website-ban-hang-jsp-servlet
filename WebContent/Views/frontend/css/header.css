@@ -1,0 +1,48 @@
+.top{
+    height: 35px;
+    text-align: center;
+}
+.logo{
+    position: absolute;
+    left:20px;
+    top:15px;
+    height: 30px;
+    width: 200px;
+    background-image: url("../image/56-apple-512.png");
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: left;
+    padding-left: 31px;
+    font-size: 19px;
+}
+    .logo:hover{
+        cursor: pointer;
+    }
+.nav-link{
+    color: black;
+}
+.cart{
+    position: absolute;
+    right:20px;
+    top:15px;
+}
+    .cart i.fa-shopping-cart:hover{
+        cursor: pointer!important;
+    }
+.category_name{
+    background-color: #dadada;
+    height: 150px;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-top: 58px!important;
+    font-size: 30px;
+    font-weight: bold;
+}
+.navtop{
+	position: fixed;
+	top:0px;
+	right:0px;
+	left:0px;
+	z-index:100!important;
+}

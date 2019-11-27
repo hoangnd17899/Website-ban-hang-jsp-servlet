@@ -1,0 +1,26 @@
+div.bottom{
+    background-color: black;
+    height: 270px;
+    margin: 0px!important;
+    padding-top: 12px!important;
+    width: 100%;
+    color: white!important;
+    padding: 0px 65px 0px 130px;
+    display: flex;
+}
+div.bottom>div{
+    display: block;
+    width: 19%;
+    height: 96%;
+    margin-top: 34px;
+}
+    div.bottom>div>a{
+        color: white;
+        text-decoration: none;
+    }
+    div.bottom>div#contactbot{
+        position: absolute;
+        min-width: 20%!important;
+        right:80px;
+        height: 158px!important;
+    }
