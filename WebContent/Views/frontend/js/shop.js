@@ -15,6 +15,7 @@ function GetURLParameter(sParam) {
 
 $(document).ready(function(){
 	var cate=GetURLParameter('category');
+	var currentpage=GetURLParameter('page');
 	if(cate!=null){
 		$('#'+cate).addClass('bg-secondary');
 		$('#'+cate).css('color','white');
@@ -22,5 +23,11 @@ $(document).ready(function(){
 	else{
 		$('#all').addClass('bg-secondary');
 		$('#all').css('color','white');
+	}
+	if(currentpage!=null){
+		$('a[page='+currentpage+']').css('background-color','#c5c5c5');
+	}
+	else{
+		$('a[page="1"]').css('background-color','#c5c5c5');
 	}
 })

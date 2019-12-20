@@ -1,79 +1,76 @@
-<aside>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="img/favicon.png">
+<title>ADMIN PAGE</title>
+<!-- Bootstrap CSS -->
+  <link href="Views/admin/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="Views/admin/css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="Views/admin/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="Views/admin/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="Views/admin/css/style.css" rel="stylesheet">
+  <link href="Views/admin/css/style-responsive.css" rel="stylesheet" />
+</head>
+<body>
+
+	<aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="active">
-            <a class="" href="index.jsp">
+            <a class="" href="ProductsForward">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Trang chủ</span>
                       </a>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="">
+            <a href="ProductsForward" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Forms</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
+                          <span>Danh sách sản phẩm</span>
+                       
                       </a>
-            <ul class="sub">
-              <li><a class="" href="form_component.jsp">Form Elements</a></li>
-              <li><a class="" href="form_validation.jsp">Form Validation</a></li>
-            </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="">
+            <a href="InsertForward" class="">
                           <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="general.jsp">Elements</a></li>
-              <li><a class="" href="buttons.jsp">Buttons</a></li>
-              <li><a class="" href="grids.jsp">Grids</a></li>
-            </ul>
-          </li>
-          <li>
-            <a class="" href="widgets.jsp">
-                          <i class="icon_genius"></i>
-                          <span>Widgets</span>
+                          <span>Thêm sản phẩm</span>
+                          
                       </a>
           </li>
-          <li>
-            <a class="" href="chart-chartjs.jsp">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
-
-                      </a>
-
-          </li>
-
           <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
-                          <span>Tables</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
+            <a href="CategoryForward" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Danh sách danh mục</span>
+                       
                       </a>
-            <ul class="sub">
-              <li><a class="" href="basic_table.jsp">Basic Table</a></li>
-            </ul>
           </li>
-
           <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
+            <a href="InsertCategory" class="">
+                          <i class="icon_desktop"></i>
+                          <span>Thêm danh mục</span>
+                          
                       </a>
-            <ul class="sub">
-              <li><a class="" href="profile.jsp">Profile</a></li>
-              <li><a class="" href="login.jsp"><span>Login Page</span></a></li>
-              <li><a class="" href="contact.jsp"><span>Contact Page</span></a></li>
-              <li><a class="" href="blank.jsp">Blank Page</a></li>
-              <li><a class="" href="404.jsp">404 Error</a></li>
-            </ul>
           </li>
-
+          <li class="sub-menu">
+            <a href="OrderForward" class="">
+                          <i class="icon_document_alt"></i>
+                          <span>Hóa đơn</span>
+                       
+                      </a>
+          </li>
         </ul>
         <!-- sidebar menu end-->
       </div>
     </aside>
     <!--sidebar end-->
+
+</body>
+</html>

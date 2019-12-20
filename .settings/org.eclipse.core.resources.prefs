@@ -1,3 +1,8 @@
 eclipse.preferences.version=1
+encoding//WebContent/Views/admin/sidebar.jsp=UTF-8
 encoding//WebContent/Views/frontend/header.jsp=UTF-8
+encoding//src/ADMIN/InsertCategory.java=UTF-8
+encoding//src/ADMIN/InsertForward.java=UTF-8
+encoding//src/ADMIN/UpdateProductForward.java=UTF-8
+encoding//src/Controller/CheckoutForward.java=UTF-8
 encoding//src/Controller/LoginForward.java=UTF-8

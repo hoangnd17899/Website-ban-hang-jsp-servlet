@@ -1,4 +1,27 @@
-<header class="header dark-bg">
+    <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="img/favicon.png">
+<title>ADMIN PAGE</title>
+<!-- Bootstrap CSS -->
+  <link href="Views/admin/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="Views/admin/css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="Views/admin/css/elegant-icons-style.css" rel="stylesheet" />
+  <link href="Views/admin/css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="Views/admin/css/style.css" rel="stylesheet">
+  <link href="Views/admin/css/style-responsive.css" rel="stylesheet" />
+</head>
+<body>
+
+	<header class="header dark-bg">
       <div class="toggle-nav">
         <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
       </div>
@@ -121,7 +144,7 @@
               </li>
               <li>
                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="Views/admin/img/avatar-mini.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Greg  Martin</span>
                                     <span class="time">1 min</span>
@@ -133,7 +156,7 @@
               </li>
               <li>
                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini2.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="Views/admin/img/avatar-mini2.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Bob   Mckenzie</span>
                                     <span class="time">5 mins</span>
@@ -145,7 +168,7 @@
               </li>
               <li>
                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini3.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="Views/admin/img/avatar-mini3.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Phillip   Park</span>
                                     <span class="time">2 hrs</span>
@@ -157,7 +180,7 @@
               </li>
               <li>
                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="Views/admin/img/avatar-mini4.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Ray   Munoz</span>
                                     <span class="time">1 day</span>
@@ -223,9 +246,9 @@
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
+                                <img alt="" src="Views/admin/img/avatar1_small.jpg">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username">ADMIN</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -259,3 +282,6 @@
       </div>
     </header>
     <!--header end-->
+
+</body>
+</html>

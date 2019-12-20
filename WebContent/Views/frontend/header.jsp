@@ -15,7 +15,7 @@
 	<nav class="navtop navbar navbar-expand-sm bg-light justify-content-center">
 			<ul class="navbar-nav">
 				<li class="logo">
-					A-GARDEN
+					GROUP-17
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="IndexForward">Trang chủ</a>

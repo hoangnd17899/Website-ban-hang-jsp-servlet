@@ -1,6 +1,8 @@
+<%@page import="BEAN.Product"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +35,14 @@
 	
 		<div class="productlist">
 				<c:forEach items="${listaccount }" var="pro">
+					<% Product product = (Product) pageContext.getAttribute("pro");
+						double price=(double)product.getPrice();
+						DecimalFormat formatter = new DecimalFormat("###,###,###");%>
 					<div class="card" style="width: 288px;">
 						<img src="Contents/Image/Product/${pro.image }" class="card-img-top" alt="...">
 						<div class="card-body">
 							<h5 class="card-title" style="text-align: center;">${pro.productName }</h5>
-							<p class="card-title" style="text-align: center;color: blue">${pro.price } VND</p>
+							<p class="card-title" style="text-align: center;color: blue"><%=formatter.format(price) %> đ</p>
 							<a href="AddToCartController?id=${pro.productID }" class="btn btn-primary btnAdd">Add to Cart</a>
 							<a href="SingleForward?id=${pro.productID }" class="btn btn-primary btnView">Views Detail</a>
 						</div>
@@ -46,21 +51,50 @@
 				
 			<nav aria-label="Page navigation example">
 				<ul class="pagination">
-					<li class="page-item"><a class="page-link" style="color: black!important" href="#">Previous</a></li>
 					<c:choose>
 					    <c:when test="${listcount%12==0}">
+					    	<c:choose>
+						    	<c:when test="${currentpage > 1}">
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage-1}">Previous</a></li>
+							    </c:when>    
+							    <c:otherwise>
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage}">Previous</a></li>
+							    </c:otherwise>
+						    </c:choose>
 					        <c:forEach var = "i" begin = "1" end = "${listcount/12}">
-						        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${i}">${i }</a></li>
-						     </c:forEach>
+						        <li class="page-item"><a page="${i}" class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${i}">${i }</a></li>
+						    </c:forEach>
+						    <c:choose>
+							    <c:when test="${currentpage < (listcount/12)}">
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage+1}">Next</a></li>
+							    </c:when>    
+							    <c:otherwise>
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage}">Next</a></li>
+							    </c:otherwise>
+						    </c:choose>
 					    </c:when>    
 					    <c:otherwise>
+					    	<c:choose>
+						    	<c:when test="${currentpage > 1}">
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage-1}">Previous</a></li>
+							    </c:when>    
+							    <c:otherwise>
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage}">Previous</a></li>
+							    </c:otherwise>
+						    </c:choose>
 					        <c:forEach var = "i" begin = "1" end = "${listcount/12 + 1 }">
-						        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${i}">${i }</a></li>
-						     </c:forEach>
+						        <li class="page-item"><a page="${i}" class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${i}">${i }</a></li>
+						    </c:forEach>
+						    <c:choose>
+							    <c:when test="${currentpage < (listcount/12)}">
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage+1}">Next</a></li>
+							    </c:when>    
+							    <c:otherwise>
+							        <li class="page-item"><a class="page-link" style="color: black!important" href="ShopForward?category=${cate }&page=${currentpage}">Next</a></li>
+							    </c:otherwise>
+						    </c:choose>
 					    </c:otherwise>
 					</c:choose>
-					
-					<li class="page-item"><a class="page-link" style="color: black!important" href="#">Next</a></li>
 				</ul>
 			</nav>	
 		</div>

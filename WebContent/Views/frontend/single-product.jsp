@@ -1,6 +1,8 @@
+<%@page import="BEAN.Product"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,10 +35,12 @@
             <aside class="col-sm-7">
     <article class="card-body p-5">
         <h3 class="title mb-3">${pro.productName }</h3>
-    
+    <% Product product = (Product) request.getAttribute("pro");
+						double price=(double)product.getPrice();
+						DecimalFormat formatter = new DecimalFormat("###,###,###");%>
     <p class="price-detail-wrap"> 
         <span class="price h3 text-warning"> 
-            <span class="currency">VND $</span><span class="num">${pro.price }</span>
+            <span class="currency">VND $</span><span class="num"><%=formatter.format(price) %></span>
         </span> 
     </p> <!-- price-detail-wrap .// -->
     <dl class="item-property">
@@ -55,55 +59,14 @@
       <dt>Xuất xứ</dt>
       <dd>${pro.origin }</dd>
     </dl>  <!-- item-property-hor .// -->
-    
-    <hr>
-        <div class="row">
-            <div class="col-sm-5">
-                <dl class="param param-inline">
-                  <dt>Số lượng: </dt>
-                  <div class="input-group">
-			          <span class="input-group-btn">
-			              <button type="button" class="btn btn-dark btn-number"  data-type="minus" data-field="quant[2]">
-			                <i class="fas fa-minus"></i>
-			              </button>
-			          </span>
-			          <input type="text" name="quant[2]" class="form-control input-number" value="10" min="1" max="100">
-			          <span class="input-group-btn">
-			              <button type="button" class="btn btn-dark btn-number" data-type="plus" data-field="quant[2]">
-			                  <i class="fas fa-plus"></i>
-			              </button>
-			          </span>
-			      </div>
-                </dl>  <!-- item-property .// -->
-            </div> <!-- col.// -->
-            <div class="col-sm-7">
-                <dl class="param param-inline">
-                      <dt>Màu sắc: </dt>
-                      <dd>
-                          <label class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                          <span class="form-check-label">Xám</span>
-                        </label>
-                        <label class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                          <span class="form-check-label">Đen</span>
-                        </label>
-                        <label class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                          <span class="form-check-label">Hồng</span>
-                        </label>
-                      </dd>
-                </dl>  <!-- item-property .// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
+        
         <hr>
         <a href="#" class="btn btn-lg btn-light text-uppercase"> MUA NGAY </a>
-        <a href="CartForward" class="btn btn-lg btn-dark text-uppercase"> <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ </a>
+        <a href="AddToCartController?id=${pro.productID }" class="btn btn-lg btn-dark text-uppercase"> <i class="fas fa-shopping-cart"></i> THÊM VÀO GIỎ </a>
     </article> <!-- card-body.// -->
             </aside> <!-- col.// -->
         </div> <!-- row.// -->
     </div> <!-- card.// -->
-    </div>
 
 	<%@include file="footer.jsp" %>
 	<!-- Optional JavaScript -->

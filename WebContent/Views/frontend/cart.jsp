@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@page import="BEAN.Product"%>
+<%@page import="java.text.DecimalFormat" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,15 +39,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+                    	<% 	
+                    		int total=0; 
+                    		DecimalFormat formatter = new DecimalFormat("###,###,###");
+                    	%>
                     	<c:forEach items="${productsInCart }" var="pro">
+                    		<%  
+                    			Product product = (Product) pageContext.getAttribute("pro");
+                    			total+=product.getPrice();
+								double price=(double)product.getPrice();
+							%>
 							<tr>
-	                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+	                            <td><img style="height: 60px; width: 60px" src="Contents/Image/Product/${pro.image }" /> </td>
 	                            <td>${pro.productName }</td>
 	                            <td>In stock</td>
 	                            <td><input class="form-control" type="text" value="1" disabled="disabled"/></td>
-	                            <td class="text-right">${pro.price } VND</td>
-	                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+	                            <td class="text-right"><%=formatter.format(price) %> đ</td>
+	                            <td class="text-right"><button class="btn btn-sm btn-danger"><a style="color: white!important;" href="RemoveProductController?id=${pro.productID }"><i class="fa fa-trash"></i></a> </button> </td>
 	                        </tr>
 						</c:forEach>
               
@@ -54,36 +64,37 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>Sub-Total</td>
-                            <td class="text-right">255,90 €</td>
+                            <td>Tổng mặt hàng</td>
+                            <td class="text-right"><%=formatter.format(total) %> đ</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>Shipping</td>
-                            <td class="text-right">6,90 €</td>
+                            <td>Phí vận chuyển</td>
+                            <td class="text-right">0 đ</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>346,90 €</strong></td>
+                            <td><strong>Tổng</strong></td>
+                            <td class="text-right"><strong><%=formatter.format(total) %> đ</strong></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
         <div class="col mb-2">
+        	<div class="row text-danger" style="padding-left: 16px;font-size: 26px;"><%= request.getAttribute("message")!=null?request.getAttribute("message"):"" %></div>
             <div class="row">
                 <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                    <a style="text-decoration: none;" href="ShopForward?category=all"><button class="btn btn-block btn-light">Tiếp tục mua sắm</button></a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-dark text-light">Checkout</button>
+                    <a style="text-decoration: none;" href="CheckoutForward"><button class="btn btn-lg btn-block btn-dark text-light">Thanh toán</button></a>
                 </div>
             </div>
         </div>

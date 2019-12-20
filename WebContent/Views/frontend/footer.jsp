@@ -34,6 +34,6 @@
 			<a><i class="fas fa-phone"></i> 0946164389 - 01672872312</a>
 		</div>
 	</div>
-	<div style="background-color: black;color: white;text-align: center;"><i class="far fa-copyright"></i> 2019 - 2020 A-GARDEN</div>
+	<div style="background-color: black;color: white;text-align: center;"><i class="far fa-copyright"></i> 2019 - 2020 GROUP-17</div>
 </body>
 </html>
